@@ -1,7 +1,6 @@
 const form = document.querySelector(".form");
+
 form.addEventListener("submit", (event) => {
-  // Предотвращает действие браузера по умолчанию. В данном случае — отправку формы
-  // https://learn.javascript.ru/default-browser-action
   event.preventDefault();
 
   const name = document.getElementById('name').value;
@@ -31,7 +30,7 @@ form.addEventListener("submit", (event) => {
   })
   .then(data => {
     showNotification('Данные успешно отправлены!', 'success');
-    document.getElementById('user-form').reset();
+    form.reset();  
     console.log(data); 
   })
   .catch(error => {
